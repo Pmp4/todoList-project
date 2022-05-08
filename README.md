@@ -105,6 +105,8 @@
     ...
   }
 ```
+<br>
+
 - 회원가입 완료 후, 회원가입 시 입력하였던 ID, PWD를 로그인화면에 담아준다.   
 ```java
 //JoinGUI===========
@@ -237,15 +239,47 @@ public class MainGUI2 extends javax.swing.JFrame {
     }
 }
 ```
+<br>
+
 - 캘린더 상단 버튼 클릭 시 캘린더 변경
 ```java
 public class MainGUI2 extends javax.swing.JFrame {
     ...
     ...
     ...
+    private void addEvent() {
+        //캘린더 버튼 (클릭 시 미리 정의한 DateReleaseHandler라는 이벤트핸들러 객체 생성)
+        btnFirst.addActionListener(new DateReleaseHandler());
+        btnPrev.addActionListener(new DateReleaseHandler());
+        btnNext.addActionListener(new DateReleaseHandler());
+        btnLast.addActionListener(new DateReleaseHandler());
+    }
+    
+    class DateReleaseHandler implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Calendar cal = new GregorianCalendar();
+            cal.setTime(currentDate); //버튼의 의해 변경되기 이전의 캘린더의 값을 가져온다.
+
+            if(e.getSource() == btnFirst) {
+                cal.add(Calendar.MONTH, -12);
+            }else if(e.getSource() == btnPrev) {
+                cal.add(Calendar.MONTH, -1);
+            }else if(e.getSource() == btnNext) {
+                cal.add(Calendar.MONTH, 1);
+            }else if(e.getSource() == btnLast) {
+                cal.add(Calendar.MONTH, 12);
+            }
+
+            currentDate = cal.getTime();  //버튼의 의해 변화된 캘린더의 값을 인스턴스 변수에 다시 담아준다.
+            dateRelease(currentDate); //해당 메서드의 의해 매개변수의 날짜정보를 기준으로 캘린더가 초기화가 된다.
+        }
+    }
 }
 ```
-- 캘린더 일자 클릭 시 해당 날짜 인식
+<br>
+
+- 캘린더 일자 클릭 시 해당 날짜 값 가져오기
 ```java
 public class MainGUI2 extends javax.swing.JFrame {
     ...
@@ -291,6 +325,16 @@ public class MainGUI2 extends javax.swing.JFrame {
     }
 }
 ```
+<br>
 
-#### 오늘 할 일
-<img width="600px" src="https://user-images.githubusercontent.com/88151484/167284346-ce5699d4-c939-4c69-bbae-28e76a60ab1d.png">
+#### 할 일
+<div>
+  <img width="49%" src="https://user-images.githubusercontent.com/88151484/167284346-ce5699d4-c939-4c69-bbae-28e76a60ab1d.png">
+  <img width="49%" src="https://user-images.githubusercontent.com/88151484/167299346-cfd9dd7d-f5b4-4c61-9c5c-dca3f26941b9.png">
+</div>
+<img width="60%" src="https://user-images.githubusercontent.com/88151484/167300836-af0b4350-5946-495b-a360-0d90e403c73e.png">
+<br>
+
+- Field에 입력 후 `+` 버튼을 클릭하면 할 일 리스트에 추가
+- 오늘의 할 일, 모든 할 일로 구분
+- 할 일 리스트 ```다른 사용자```에게 공유 가능
