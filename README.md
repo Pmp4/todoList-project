@@ -25,6 +25,15 @@
 - 생성한 할 일, 프로젝트는 다른 사용자에게 공유할 수 있도록 구현 (수정X, 할 일 완료 및 공유된 자신에게만 삭제할 수 있는 권한 부여)
 <br>
 
+## 💽 DB 설계
+<div>
+  <img width="49%" src="https://user-images.githubusercontent.com/88151484/167290357-b74ef54c-d6d9-4353-bc45-32e6d134cb3b.png">
+  <img width="49%" src="https://user-images.githubusercontent.com/88151484/167290359-109771ad-6eb8-401f-9667-25bfe12e5e17.png">
+</div>
+
+테이블 부분은 
+[링크](https://docs.google.com/presentation/d/1W-vd92Hp-BsFgzraK4iwAI2g-tZcWvAVcTg9GBg3WU8/edit#slide=id.g12547a1813a_0_9){:target="_blank"}
+
 ## 🎨 프로그램 GUI
 ### 로그인/회원가입
 <div>
