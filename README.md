@@ -31,8 +31,7 @@
   <img width="49%" src="https://user-images.githubusercontent.com/88151484/167290359-109771ad-6eb8-401f-9667-25bfe12e5e17.png">
 </div>
 
-테이블 부분은 
-[링크](https://docs.google.com/presentation/d/1W-vd92Hp-BsFgzraK4iwAI2g-tZcWvAVcTg9GBg3WU8/edit#slide=id.g12547a1813a_0_9){:target="_blank"}
+테이블 부분은 <a href="https://www.google.com/" target="_blank">링크</a> 참조
 
 ## 🎨 프로그램 GUI
 ### 로그인/회원가입
