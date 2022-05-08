@@ -1,5 +1,5 @@
 # 📆 TodoList-project 📆
-처음하는 개발 프로젝트로, JDBC의 CRUD 활용에 익숙해지기 위해 진행한 프로젝트
+처음하는 개발 프로젝트로, JDBC의 ```CRUD``` 활용에 익숙해지기 위해 진행한 프로젝트
 
 ### 사용된 기술
 <div>
@@ -254,20 +254,36 @@ public class MainGUI2 extends javax.swing.JFrame {
     
     private void addEvent() {
         //캘린더 일자 클릭 이벤트
-        for(int i = 0; i < dayPanel.length; i++) {
+        for(int i = 0; i < dayPanel.length; i++) {       
             for(int j = 0; j < dayPanel[i].length; j++) {
-                int row = i;
-                int col = j;
+                int row = i;  //캘린더의 행 : i
+                int col = j;  //캘린더의 열 : j
                 dayPanel[i][j].addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
                         PointerInfo pointerInfo = MouseInfo.getPointerInfo();
                         int[] cool = {pointerInfo.getLocation().x, pointerInfo.getLocation().y};
-                        if(e.getClickCount() > 1) calenderClick(row, col, cool);
+                        if(e.getClickCount() > 1) {
+                          calenderClick(row, col, cool);  //이벤트 발생 시, calenderClick() 호출과 매개변수로 클릭한 행, 열을 보내줌
+                        }
                     }
                 });
             }
         }
+        
+        ...
+        ...
+        ...
+    }
+    
+    ...
+    ...
+    ...
+    
+    private void calenderClick(int i, int j, int[] loc) {
+        int day = dayArr[i][j]; //클릭한 행, 열의 값을 다차원 배열에서 찾아낸다.
+        System.out.println("클릭한 일자 : " + day);
+        if(day == -1) return; //찾아낸 배열의 값이 '-1'일 경우 빈공간이므로 return
         
         ...
         ...
