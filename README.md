@@ -32,6 +32,7 @@
 </div>
 
 테이블 부분은 <a href="https://docs.google.com/presentation/d/1W-vd92Hp-BsFgzraK4iwAI2g-tZcWvAVcTg9GBg3WU8/edit?usp=sharing" target="_blank">링크</a> 참조
+<br>
 
 ## 🎨 프로그램 GUI
 ### 로그인/회원가입
